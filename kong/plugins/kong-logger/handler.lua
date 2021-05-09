@@ -5,7 +5,7 @@ local timer_at = ngx.timer.at
 
 local LoggerHandler = {
   PRIORITY = 6,
-  VERSION = "0.1.0",
+  VERSION = "0.1.1",
 }
 
 function LoggerHandler:access(conf) 
