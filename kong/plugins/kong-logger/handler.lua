@@ -60,7 +60,7 @@ function LoggerHandler:log(conf)
     -- dto - which contains the request data - is captured by the closure for printing
     sanitize(dto.request)
     local asJson = cjson.encode(dto)
-    kong.log.info("[kong-logger]" .. asJson .. "[/kong-logger]")
+    kong.log.err("[kong-logger]" .. asJson .. "[/kong-logger]")
   end
 
   -- Serialize to json and print our of the scope of the user's request - to reduce lateney
