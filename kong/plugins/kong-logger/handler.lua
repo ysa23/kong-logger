@@ -57,9 +57,27 @@ function LoggerHandler:log(conf)
       end
     end
   end
+
+  local function shouldFilterRequest (input)
+    if not conf.path_filters or #conf.path_filters == 0 then
+      return false
+    end
+
+    for _,filter in pairs(conf.path_filters) do
+      if string.find(input.uri, filter) then
+        return true
+      end
+    end
+
+    return false
+  end
   
   local print_request = function()
     -- dto - which contains the request data - is captured by the closure for printing
+    if shouldFilterRequest(dto.request) then
+      return
+    end
+
     sanitize(dto.request)
     local asJson = cjson.encode(dto)
     kong.log.err("[kong-logger]" .. asJson .. "[/kong-logger]")

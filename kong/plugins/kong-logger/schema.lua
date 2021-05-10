@@ -8,6 +8,15 @@ return {
         fields = {
           { masks = {
               type = "set",
+              required = false,
+              elements ={
+                type = "string"
+              },
+            },
+          }, 
+          { path_filters = {
+              type = "set",
+              required = false,
               elements ={
                 type = "string"
               },
