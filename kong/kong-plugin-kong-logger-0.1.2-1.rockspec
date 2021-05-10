@@ -1,5 +1,5 @@
 package = "kong-plugin-kong-logger"  
-version = "0.1.1-1"       
+version = "0.1.2-1"       
 
 -- Here we extract it from the package name.
 local pluginName = package:match("^kong%-plugin%-(.+)$")  -- "-logger"
@@ -7,7 +7,7 @@ local pluginName = package:match("^kong%-plugin%-(.+)$")  -- "-logger"
 supported_platforms = {"linux", "macosx"}
 source = {
   url = "https://github.com/ysa23/kong-logger.git",
-  tag = "0.1.0"
+  tag = "0.1.2"
 }
 
 description = {

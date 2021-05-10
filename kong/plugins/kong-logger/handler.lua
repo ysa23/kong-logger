@@ -5,7 +5,7 @@ local timer_at = ngx.timer.at
 
 local LoggerHandler = {
   PRIORITY = 6,
-  VERSION = "0.1.1",
+  VERSION = "0.1.2",
 }
 
 function LoggerHandler:access(conf) 
@@ -26,7 +26,9 @@ function LoggerHandler:log(conf)
     response = message.response,
   }
 
-  dto.request.body = ngx.ctx.logger.req_body
+  if ngx.ctx.logger ~= nil and ngx.ctx.logger.req_body ~= nil then
+    dto.request.body = ngx.ctx.logger.req_body
+  end
 
   local masks = {}
   for _, mask in pairs(conf.masks) do
