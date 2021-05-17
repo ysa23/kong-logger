@@ -14,13 +14,14 @@ A [Kong](https://konghq.com/kong/) plugin for logging http request to a log as a
 The plugin is built using lua and distributed as a rock.
 To build the rock run the following in terminal:
 ```
+$ cd kong
 $ ./build-plugin.sh
 ```
 A file suffixed with `.all.rock` will be generated.
 
 ### Install
 An example for generating a Kong docker image with the plugin can be found in the `Dockerfile` in the repo.
-You can build the image running `./build-docker.sh` script.
+You can build the image running `build-docker.sh` script.
 
 To install on enterprise edition, revise the base image in `Dockerfile` to your available Kong Enterprise image.
 
@@ -48,6 +49,7 @@ An array of URI paths, which won't be logged by the logger. Any request that wil
 ### Running on local machine
 Run the following command in terminal:
 ```
+$ cd kong
 $ ./build-docker.sh
 $ docker-compose up -d
 ```
