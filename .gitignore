@@ -3,6 +3,3 @@
 
 # Docker
 kong-data
-build-docker.sh
-Dockerfile
-docker-compose.yaml

@@ -31,8 +31,11 @@ function LoggerHandler:log(conf)
   end
 
   local masks = {}
-  for _, mask in pairs(conf.masks) do
-    masks[mask] = true
+
+  if conf.masks ~= nil then
+    for _, mask in pairs(conf.masks) do
+      masks[mask] = true
+    end
   end
 
   local function shouldBeMasked(key)
