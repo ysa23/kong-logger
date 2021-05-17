@@ -21,6 +21,8 @@ A file suffixed with `.all.rock` will be generated.
 An example for generating a Kong docker image with the plugin can be found in the `Dockerfile` in the repo.
 You can build the image running `./build-docker.sh` script.
 
+To install on enterprise edition, revise the base image in `Dockerfile` to your available Kong Enterprise image.
+
 ### Running on local machine
 Run the following command in terminal:
 ```
@@ -32,4 +34,4 @@ You can access kong via its Admin API (`http://localhost:8001`) , or via [Konga]
 ## How to contribute
 We encourage contribution via pull requests on any feature you see fit.
 
-Read [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more details about creating pull requests
+Read [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more details about creating pull requests.
