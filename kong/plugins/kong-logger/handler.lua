@@ -83,6 +83,14 @@ function LoggerHandler:log(conf)
 
     sanitize(dto.request)
     local asJson = cjson.encode(dto)
+    -- Due to limits of error logs, we filter the request body, under the assumption that the body is the cause of the large payload
+    local limit = conf.filter_body_on_limit
+    if limit ~= nil and string.len(asJson) > limit then
+      if dto.request ~= nil and dto.request.body ~= nil then
+        dto.request.body = nil
+        asJson = cjson.encode(dto)
+      end
+    end
     kong.log.err("[kong-logger]" .. asJson .. "[/kong-logger]")
   end
 
