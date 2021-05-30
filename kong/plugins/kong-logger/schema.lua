@@ -22,6 +22,11 @@ return {
               },
             },
           },
+          { filter_body_on_limit = {
+            type = "number",
+            required = false,
+          },
+        }, 
         }
       }
     }
