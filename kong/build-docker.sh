@@ -1,5 +1,5 @@
 KONG_VERSION=2.4.1-alpine
-LOGGER_VERSION=0.1.4
+LOGGER_VERSION=0.1.5
 
 ./build-plugin.sh
 

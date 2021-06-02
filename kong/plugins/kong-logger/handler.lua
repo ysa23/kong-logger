@@ -82,6 +82,7 @@ function LoggerHandler:log(conf)
     end
 
     sanitize(dto.request)
+    sanitize(dto.response)
     local asJson = cjson.encode(dto)
     -- Due to limits of error logs, we filter the request body, under the assumption that the body is the cause of the large payload
     local limit = conf.filter_body_on_limit
