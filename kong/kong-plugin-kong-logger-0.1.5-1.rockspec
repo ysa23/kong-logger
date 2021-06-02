@@ -1,5 +1,5 @@
 package = "kong-plugin-kong-logger"  
-version = "0.1.4-1"       
+version = "0.1.5-1"
 
 -- Here we extract it from the package name.
 local pluginName = package:match("^kong%-plugin%-(.+)$")  -- "-logger"
